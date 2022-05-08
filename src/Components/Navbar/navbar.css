@@ -1,43 +1,43 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.searchBar, .listBar{
+.searchBar{
     height: 80px;
-    background-color: aqua;
-    border: 1px solid lightgray;
+    background-color: teal;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content:space-between;
     padding: 10px 2%;
     margin: 2% 10%;
-}
-
-.prevNext button, .listBar select{
-    height: 30px;
-    width: 150px;
-    margin: 0 10px;
     border-radius: 5px;
-    font-size: 1.1em;
 }
 
 .filter-button{
-    width: 120px;
+    /* width: auto; */
     height: 40px;
-    background-color: orange;
+    background-color: #FCC133;
     border: none;
     cursor: pointer;
     font-size: 1.3em;
     border-radius: 5%;
     border: 1px solid black;
+    padding: 0 5px;
+}
+
+.searchBar h2{
+    /* color: rgba(0, 0, 0, 0.7); */
+    color: white;
+    padding: 4px 5px;
+    border: 2px solid #FCC133;
+    border-radius: 5px;
+}
+
+.searchBar h2:hover{
+    color: #fbb000;
+    border: 2px solid #fbb000;
 }
 
 .input{
     height: 60%;
-    /* width: 300px; */
-    border: 0.5px solid lightgray;
+    border: 1.8px solid black;
     display: "flex";
     align-items: "center";
     margin-left: "25px";
@@ -45,10 +45,9 @@
     background-color: white;
     display: flex;
     align-items: center;
-    
 }
 
-input{
+.input input{
     border: none;
     outline: none;
     width: 350px;
@@ -57,26 +56,37 @@ input{
     font-size: 1.2em;
 }
 
-input::placeholder{
-    font-size: 1em;
+.input:hover{
+    transform: scale(1.1);
 }
 
-.search-icon{
-    padding: 5px;
+.orderBy{
+    height: 50%;
+    padding: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-.spinner{
-    font-size: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 0;
+.orderBy:hover{
+    background-color: #FCC133;
+}
+
+#Books, #Magazines{
+    height: 15px;
+    width: 15px;
+   margin: 0 0 0 24%;
+   cursor: pointer;
+}
+
+.row label{
+    cursor: pointer;
 }
 
 .filter{
     min-height: 400px;
     width: 600px;
-    background-color: lightgray;
+    background-color: teal;
+    color: white;
     z-index: 2;
     position: absolute;
     top: 53%;
@@ -88,6 +98,7 @@ input::placeholder{
     padding: 15px;
     border: 1px solid black;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 40px;    
 }
 
 .row{
@@ -117,7 +128,11 @@ input::placeholder{
 }
 
 .row button:hover{
-    background-color: orange;
+    background-color: #FCC133;
+}
+
+.search-icon{
+    padding: 5px;
 }
 
 .apply-button{
@@ -130,54 +145,33 @@ input::placeholder{
     left: 30%;
     margin-top: 10px;
     border-radius: 10%;
-    background-color: orange;
-    font-size: 1.2em;
-    border: 1.5px solid gray;
+    background-color: #fab514;
+    color: black;
+    font-size: 1.5em;
+    border: 1.5px solid white;
 }
 
-.bookContainer{
-    z-index: 1;
-    min-height: 800px;
-}
-
-.orderBy{
-    height: 50%;
-    padding: 0 10px;
-    font-size: 18px;
-}
-
-.orderBy:hover{
-    background-color: orange;
-}
-
-form{
-      display: flex;
-      align-items: center;
-}
-
-#Books, #Magazines{
-      height: 15px;
-      width: 15px;
-     margin: 0 0 0 24%;
+.apply-button:hover{
+    transform: scale(1.1);
 }
 
    /* ToolTip */
-.tooltip {
+   .tooltip {
     position: relative;
   }
   
    .tooltiptext {
     visibility: hidden;
     width: 300px;
-    background-color: black;
-    color: #fff;
+    background-color: #FCC133;
+    color: black;
     font-size: 1.3em;
     border-radius: 6px;
     padding: 15px 0 15px 10px;
     position: absolute;
     z-index: 1;
     top: 130%;
-    left: 20%;
+    left: -30%;
     margin-left: -60px;
   }
   

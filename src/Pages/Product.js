@@ -1,59 +1,66 @@
 import "./product.css";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-const price = {
-  fontWeight: "600",
-  fontSize: "40px",
-  color: "teal",
-};
 
 const Product = () => {
   const { id } = useParams();
 
-  const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [product, setProduct] = useState();
 
   useEffect(() => {
     const getProduct = async () => {
-      setLoading(true);
-      const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-      setProduct(await res.json());
-      setLoading(false);
+      const res = await fetch(
+        `https://www.googleapis.com/books/v1/volumes/${id}`
+      );
+      const data = await res.json();
+      setProduct(data);
     };
     getProduct();
   }, []);
 
-  const Loading = ()=>{
-    return(
-      <i class="fa-solid fa-spinner spinner"></i>
-    )
-  }
-
-  const ShowProduct = () => {
-    return (
-      <>
-        <div className="imageContainer">
-          <img
-            src={product.image}
-            alt={product.title}
-          />
-        </div>
-        <div className="infoContainer">
-          <h6 className="text-uppercase text-black-50">{product.category}</h6>
-          <h2>{product.title}</h2>
-          <p className="my-3">{product.description}</p>
-          <span style={price}>${product.price}</span>
-        </div>
-      </>
-    );
-  };
-
   return (
     <>
-      <div className="container">
-        {loading ? <Loading /> : <ShowProduct />}
-      </div>
+      {product ? (
+        <div className="container">
+          <div className="imageContainer">
+            <img
+              src={product.volumeInfo.imageLinks.medium}
+              alt={product.volumeInfo.title}
+            />
+          </div>
+          <div className="infoContainer">
+            <h2>Book Name : {product.volumeInfo.title}</h2>
+            <h4>
+              <span style={{ color: "orange" }}>Author : </span>
+              {product.volumeInfo.authors}
+            </h4>
+            <h4>
+              <span>Published Date : </span>
+              {product.volumeInfo.publishedDate}
+            </h4>
+            <p className="my-3">
+              <span style={{ fontWeight: "bold" }}>Description : </span>
+              {product.volumeInfo.description}
+            </p>
+            <h4>
+              <span>Page Count : </span>
+              {product.volumeInfo.pageCount}
+            </h4>
+            <span className="price">
+              Price :
+              <span style={{ color: "#ff0000c0" }}>
+                {" "}
+                ₹{" "}
+                {product.saleInfo.retailPrice
+                  ? product.saleInfo.retailPrice.amount
+                  : "Not Available"}
+              </span>
+            </span>
+          </div>
+        </div>
+      ) : (
+        <i class="fa-solid fa-spinner spinner"></i>
+      )}
     </>
   );
 };

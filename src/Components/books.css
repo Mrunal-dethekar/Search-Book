@@ -1,8 +1,0 @@
-.books{
-    margin: 2% 10%;
-    /* background-color:yellow; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* min-height: 1000px; */
-}

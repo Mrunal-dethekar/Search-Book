@@ -1,0 +1,27 @@
+
+.listBar{
+    height: 80px;
+    background-color: teal;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 2%;
+    margin: 2% 10%;
+    border-radius: 5px;
+}
+
+.prevNext button, .listBar select{
+    height: 30px;
+    width: 150px;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #FCC133;
+}
+
+.select{
+    text-align: center;
+    border: 2px solid black;
+}

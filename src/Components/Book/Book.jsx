@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import imageNotFound from "../Assets/imageNotFound.png";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import imageNotFound from "../../Assets/imageNotFound.png";
 import "./book.css";
+import { seeImage } from "../../redux/action";
 
 const Book = ({ book }) => {
   const [showHide, setShowHide] = useState(0);
+  const dispatch = useDispatch();
 
   const handleHover = (e) => {
     if (e === "show") {
@@ -12,6 +16,11 @@ const Book = ({ book }) => {
       setShowHide(0);
     }
   };
+
+  const seeImagefun =(e)=>{
+    dispatch(seeImage(e));
+    console.log("hey")
+  }
 
   return (
     <div
@@ -55,10 +64,12 @@ const Book = ({ book }) => {
 
       <div className="info" style={{ opacity: `${showHide}` }}>
         <div className="icon">
-          <i class="fa-solid fa-eye"></i>
+          <i className="fa-solid fa-eye" onClick={()=>seeImagefun(book.volumeInfo.imageLinks.thumbnail)}></i>
         </div>
         <div className="icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <Link to={`/product/${book.id}`}>
+          <i className="fa-solid fa-magnifying-glass"></i>
+          </Link>
         </div>
       </div>
     </div>
