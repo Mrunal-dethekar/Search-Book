@@ -40,7 +40,7 @@ const Navbar = () => {
   }, [state.filterObj]);
 
   return (
-    <>
+    <div>
       <div className="searchBar">
         <Link to="/" style={{ textDecoration: "none" }}>
           <h2>
@@ -122,7 +122,7 @@ const Navbar = () => {
           Apply
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
