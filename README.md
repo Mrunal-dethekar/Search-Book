@@ -1,5 +1,3 @@
 # Book Search App
 
-
-### Link Not Working as expected, please clone the code and run from your Laptop
-[Live Demo](https://627a03e3ba249d43c7f7416a--mrunal-book-search.netlify.app/).
+[Live Demo](https://627a4ff7de7c13049c869ab7--mrunal-book-search.netlify.app/).
