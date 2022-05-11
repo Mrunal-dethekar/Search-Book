@@ -6,28 +6,14 @@ import "./book.css";
 import { seeImage } from "../../redux/action";
 
 const Book = ({ book }) => {
-  const [showHide, setShowHide] = useState(0);
   const dispatch = useDispatch();
 
-  const handleHover = (e) => {
-    if (e === "show") {
-      setShowHide(1);
-    } else {
-      setShowHide(0);
-    }
+  const seeImagefun = (e) => {
+    dispatch(seeImage(e));
   };
 
-  const seeImagefun =(e)=>{
-    dispatch(seeImage(e));
-    console.log("hey")
-  }
-
   return (
-    <div
-      className="book"
-      onMouseEnter={() => handleHover("show")}
-      onMouseLeave={() => handleHover("hide")}
-    >
+    <div className="book">
       <img
         src={
           book.volumeInfo.imageLinks
@@ -62,13 +48,16 @@ const Book = ({ book }) => {
           : " Not Available"}
       </h6>
 
-      <div className="info" style={{ opacity: `${showHide}` }}>
+      <div className="info">
         <div className="icon">
-          <i className="fa-solid fa-eye" onClick={()=>seeImagefun(book.volumeInfo.imageLinks.thumbnail)}></i>
+          <i
+            className="fa-solid fa-eye"
+            onClick={() => seeImagefun(book.volumeInfo.imageLinks.thumbnail)}
+          ></i>
         </div>
         <div className="icon">
           <Link to={`/product/${book.id}`}>
-          <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </Link>
         </div>
       </div>

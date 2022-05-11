@@ -1,5 +1,4 @@
-
-.spinner{
+.spinner {
     font-size: 300px;
     display: flex;
     justify-content: center;
@@ -7,7 +6,7 @@
     margin: 100px 0;
 }
 
-.bookContainer{
+.bookContainer {
     z-index: 1;
     min-height: 400px;
     margin: 100px 10% 2% 10%;
@@ -16,34 +15,49 @@
     justify-content: center;
 }
 
-.seeImage{
+.seeImage {
     position: fixed;
     top: 25%;
-    left : 30vw;
+    left: 30vw;
     z-index: 2;
     width: 40vw;
     height: 70vh;
-    background-color: yellow;
     border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 40px;  
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 40px;
     animation: grow 0.5s ease-out;
 }
 
-.seeImage img{
+.seeImage img {
     width: 100%;
     height: 100%;
+    border-radius: 15px;
 }
 
-@keyframes grow{
-    from {transform: scale(0);}
-    to {transform: scale(1);}
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
-.fa-xmark{
+.fa-xmark {
     position: absolute;
     right: -34px;
     top: -43px;
     color: rgba(255, 0, 0, 0.628);
     font-size: 50px;
     cursor: pointer;
+}
+
+/* Mobile Respnsiveness */
+@media only screen and (max-width: 1000px) {
+    .seeImage {
+        width: auto;
+        left: 0;
+        margin: 40px;
+    }
 }

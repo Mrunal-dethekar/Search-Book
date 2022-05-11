@@ -1,58 +1,68 @@
-.book{
-    margin: 5px;
-    min-width: 280px;
-    height: 350px;
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: #f5fbfd;
-    position: relative;
+.book {
+  margin: 15px 10px;
+  min-width: 280px;
+  height: 350px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #f5fbfd;
+  border: 1px solid rgba(0, 0, 0, 0.715);
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 25px;
 }
 
-.image{
-    height: 70%;
-    z-index: 2;
-    max-width: 80%;
+.book:hover .info {
+  opacity: 1;
 }
 
-.info{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.2);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease;
-    cursor: pointer;
-  }
+.image {
+  height: 70%;
+  z-index: 2;
+  max-width: 80%;
+  border-radius: 10px;
+}
 
-  .icon{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    transition: all 0.5s ease;
-  }
+.info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  opacity: 0;
+  border-radius: 25px;
+}
 
-  .icon:hover{
-    background-color: #e9f5f5;
-    transform: scale(1.1);
-  }
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all 0.5s ease;
+}
 
-  .h6{
-    font-size: 13px;
-    text-align: center;
-    position: absolute;
-  }
+.icon:hover {
+  background-color: #e9f5f5;
+  transform: scale(1.1);
+}
 
-  .fa-solid{
-    font-size: 25px;
-  }
+.h6 {
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+}
+
+.fa-solid {
+  font-size: 25px;
+}

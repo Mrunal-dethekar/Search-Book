@@ -55,7 +55,7 @@ const myReducer = (state = intialState, action) => {
         ...state,
         filter: {
           ...state.filter,
-          opacity: `${state.filter.opacity == "0.1" ? "1" : "0.1"}`,
+          opacity: `${state.filter.opacity == "0" ? "1" : "0"}`,
         },
         seeImage: {
           image: payload,
@@ -68,7 +68,7 @@ const myReducer = (state = intialState, action) => {
         ...state,
         filter: {
           display: `${state.filter.display == "none" ? "flex" : "none"}`,
-          opacity: `${state.filter.opacity == "0.1" ? "1" : "0.1"}`,
+          opacity: `${state.filter.opacity == "0" ? "1" : "0"}`,
         },
       };
     }

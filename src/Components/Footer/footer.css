@@ -1,27 +1,62 @@
-
-.listBar{
-    height: 80px;
-    background-color: teal;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+.listBar {
+    /* height: 80px; */
+    /* background-color: teal; */
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
+    border-top: 3px solid #a57d40;
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    padding: 10px 2%;
-    margin: 2% 10%;
-    border-radius: 5px;
+    justify-content: space-between;
+    padding: 10px 10%;
+    margin: 2% 3%;
+    border-radius: 25px 25px 0 0;
 }
 
-.prevNext button, .listBar select{
-    height: 30px;
-    width: 150px;
-    margin: 0 10px;
-    border-radius: 5px;
-    font-size: 1.1em;
+.prevNext button,
+.listBar select {
+    height: 45px;
+    width: 200px;
+    margin: 5px 10px;
+    border-radius: 18px;
+    font-size: 1.4em;
     cursor: pointer;
-    background-color: #FCC133;
+    background-color: #a57d40;
+    border: 1px solid rgba(0, 0, 0, 0.664);
+    /* box-shadow: white 0px 5px 15px; */
 }
 
-.select{
+.select {
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.664);
+}
+
+.prevNext button:disabled {
+    cursor: not-allowed;
+}
+
+.prevNext button:hover,
+.listBar select:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #a57d40;
+}
+
+.listBar div span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+/* Mobile Respnsiveness */
+@media only screen and (max-width: 1000px) {
+    .listBar {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .prevNext button,
+    .listBar select {
+        margin: 10px;
+    }
 }

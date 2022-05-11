@@ -1,34 +1,39 @@
-
 .container {
   min-height: 80vh;
   display: flex;
+  flex-wrap: wrap;
   margin: 2% 10%;
 }
 
 .imageContainer {
+  min-width: 400px;
   flex: 1;
 }
 
 .imageContainer img {
   height: 100%;
   width: 90%;
+  border-radius: 15px;
 }
 
 .infoContainer {
+  background-color: rgba(255, 255, 255, 0.687);
   flex: 1;
-  padding: 2% 0;
+  padding: 2%;
+  border-radius: 15px;
+  min-width: 400px;
 }
 
-.infoContainer h4{
-margin: 10px 0;
+.infoContainer h4 {
+  margin: 10px 0;
 }
 
-.infoContainer p{
-margin: 10px 0;
-font-size: 20px;
+.infoContainer p {
+  margin: 10px 0;
+  font-size: 20px;
 }
 
-.spinner{
+.spinner {
   font-size: 300px;
   display: flex;
   justify-content: center;
@@ -40,4 +45,4 @@ font-size: 20px;
   font-weight: 600;
   font-size: 27px;
   color: teal;
-};
+}

@@ -34,14 +34,17 @@ const Footer = () => {
 
   return (
     <div className="listBar">
-      <select name="Pages" onChange={changeResult} className="select">
-        <option value="5">5</option>
-        <option value="10" selected>
-          10
-        </option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-      </select>
+      <div>
+        <span>Books per Page</span>
+        <select name="Pages" onChange={changeResult} className="select">
+          <option value="5">5</option>
+          <option value="10" selected>
+            10
+          </option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
       <div className="prevNext">
         <button onClick={() => changeStartIndex("prev")} disabled={disabled}>
           <i class="fa-solid fa-angles-left"></i> Prev

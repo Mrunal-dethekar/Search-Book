@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className="searchBar">
         <Link to="/" style={{ textDecoration: "none" }}>
           <h2>
-            <i class="fa-solid fa-house"></i> Home
+            <i class="fa-solid fa-house"></i> Google Books
           </h2>
         </Link>
 
@@ -54,23 +54,32 @@ const Navbar = () => {
         </div>
         <div className="tooltip">
           <button className="filter-button" onClick={filterContainer}>
-          <i class="fa-solid fa-filter"style={{color:"gray"}}></i> Filters {`(${state.filterCount})`}
+            <i class="fa-solid fa-filter"></i> Filters{" "}
+            {`(${state.filterCount})`}
           </button>
           <span className="tooltiptext">
             {state.filterObj.eBook ? (
-              <div className="typeOfBook">
+              <div
+                className="typeOfBook"
+                style={{ padding: "15px 0 7px 15px" }}
+              >
                 Type Of Book : {state.filterObj.eBook}
               </div>
             ) : (
               ""
             )}
             {state.filterObj.orderBy == "newest" ? (
-              <div className="order-by">Order By : Newest</div>
+              <div className="order-by" style={{ padding: "7px 0 7px 15px" }}>
+                Order By : Newest
+              </div>
             ) : (
               ""
             )}
             {state.filterObj.Book || state.filterObj.Magazines ? (
-              <div className="print-type">
+              <div
+                className="print-type"
+                style={{ padding: "7px 0 15px 15px" }}
+              >
                 Print Type : {state.filterObj.Book && "Book"},{" "}
                 {state.filterObj.Magazines && "Magazines"}
               </div>
@@ -80,7 +89,7 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-      <div className="filter" style={{ display: state.filter.display}}>
+      <div className="filter" style={{ display: state.filter.display }}>
         <div className="row">
           Type Of the Book :{" "}
           <button onClick={() => applyFilter("free-ebooks")}>
